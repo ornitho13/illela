@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+		<script src="scripts/EasJs.js"></script>
+		<script>
+		    EasJs.loadJs(['//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'], function(){
+		    	var responseElt = document.getElementById('response');
+		    	$(document.getElementById('bike-station')).on('change', function(event){
+		    		var id = this.value;
+		    		$.ajax({
+	                    url : 'http://127.0.0.1/illela/web/velo/getbikestations/' + id,
+	                    dataType : 'json'
+	                }).done(function(response){
+	                	var station = response.opendata.answer.data.station;
+	                	var template = '<h1>' + station.name + '</h1><h2>Adresse : ' + station.address + '</h2><h3>District : ' + station.district + '</h3><div>Vélos disponibles : ' + station.bikesavailable + '</div>'
+	                	responseElt.innerHTML = template;
+	                }).fail(function(error){
+	                    console.log(error)
+	                });
+		    	});
+		    	
+		    	//fill select response
+		    	
+		    	var id = 52;
+		    	$.ajax({
+		    		url : 'http://127.0.0.1/illela/web/velo',
+		    		dataType : 'json'
+		    	}).done(function(response){
+		    		var stations = response.opendata.answer.data.station, i = 0, len = stations.length, optionsItemStation = '';
+		    		for(; i < len; i++) {
+		    			var station = stations[i];
+		    			optionsItemStation += '<option value="' + station.number + '"' 
+		    			   + (parseInt(station.state, 10) === 1 ? '' : ' disabled="disabled"') + '>' + station.name + '</option>';
+		    		}
+		    		document.getElementById('bike-station').innerHTML = optionsItemStation;
+		    	}).fail(function(error){
+		    		console.log(error)
+		    	});
+		    }, 'ready', 'loaded');
+
+		</script>
+		<style>
+		
+		</style>
+	</head>
+	<body>
+		<select id="bike-station"></select>
+		<div id="response"></div>
+	</body>
+</html>

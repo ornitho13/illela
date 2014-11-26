@@ -9,9 +9,8 @@ define('__KEOLIS_API_KEY__', '5V2C9RF6SF9GW49');
 $app = new Silex\Application();
 $app['debug'] = true;
 
-$app->get('/trajet', 'Illela\\Trajet::index');
 $app->get('/velo', 'Illela\\Controller\\Velo::index');
-$app->match('/velo/{commande}/{id}', function($commande = 'getbikestations', $id='') {
+$app->get('/velo/{commande}/{id}', function($commande = 'getbikestations', $id='') {
     $veloController = new Velo();
     switch($commande) {
         case 'getbikestations';
