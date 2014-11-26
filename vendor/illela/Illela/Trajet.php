@@ -11,6 +11,7 @@ class Trajet
 	public function index(Request $request, Application $app)
 	{
 		
+		
 		return new JsonResponse('{"name" : "test"}', 200);
 	}
 }
