@@ -1,0 +1,16 @@
+    <div class="velo">
+	    <h2>Choisissez une station :</h2>
+		<select id="bike-station">
+			<option ng-repeat="station in stations" value="{{station.number}}" ng-disabled="{{!station.state}}">{{station.name}}</option>
+		</select>
+		<div class="{{displayState}}">
+			<address><span class="icon-my-location"></span>{{result.address}}</address>
+			<div class="status">statut : <span class="icon-{{result.status}}"></span></div>
+			<div class="slot-bike">
+				<div class="left bike">{{result.bikesavailable}}</div>
+				<div class="right slot">{{result.slotsavailable}}</div>
+			</div>
+			<h3>Bus et m&eacute;tro &agrave; cette station</h3>
+			
+		</div>
+	</div>
