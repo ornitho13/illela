@@ -1,0 +1,137 @@
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+body {
+	font-size: 16px
+}
+
+.one-column,.two-columns,.three-columns,.four-columns,.five-columns,
+.six-columns,.seven-columns,.eight-columns,.nine-columns,.ten-columns,
+.eleven-columns,.twelve-columns,.thirteen-columns,.fourteen-columns,
+.fifteen-columns,.sixteen-columns,.third-column,.two-thirds-columns {
+	max-width: 100%;
+	width: 100%;
+	padding: 20px;
+}
+
+.grid-main {
+	max-width: 100%;
+	width: 100%;
+	margin: 0 auto
+}
+
+.row {
+	overflow: hidden;
+	clear: both
+}
+
+@media only screen and (min-width: 480px) {
+	body {
+		font-size: 15px
+	}
+	.clear {
+		clear: both
+	}
+}
+
+@media only screen and (min-width: 767px) {
+	.one-column,.two-columns,.three-columns,.four-columns,.five-columns,
+	.six-columns,.seven-columns,.eight-columns,.nine-columns,.ten-columns,
+	.eleven-columns,.twelve-columns .thirteen-columns,.fourteen-columns,.fifteen-columns {
+		max-width: 50%;
+		width: 50%;
+		float: left
+	}
+	.sixteen-columns {
+		float: left
+	}
+	.one-column,.two-columns,.three-columns,.four-columns {
+		max-width: 25%;
+		width: 100%
+	}
+	.eight-columns {
+		max-width: 50%;
+		width: 100%
+	}
+	.twelve-columns,.thirteen-columns,.fourteen-columns,.fifteen-columns {
+		max-width: 75%;
+		width: 100%
+	}
+	.third-column {
+		width: 33.3333%;
+		float: left
+	}
+	.two-thirds-columns {
+		width: 66.6666%;
+		float: left
+	}
+}
+
+@media only screen and (min-width: 959px) {
+	body {
+		font-size: 14px
+	}
+	.grid-main {
+		max-width: 1040px;
+		margin: 0 auto !important
+	}
+	.one-column,.two-columns,.three-columns,.four-columns,.five-columns,.six-columns,
+	.seven-columns,.eight-columns,.nine-columns,.ten-columns,.eleven-columns,
+	.twelve-columns,.thirteen-columns,.fourteen-columns,.fifteen-columns,
+	.sixteen-columns{
+		max-width: 100%;
+		padding: 10px;
+		width: 6.25%
+	}
+	.third-column,.two-thirds-columns  {
+        padding: 10px;
+    }
+	.two-columns {
+		width: 12.5%
+	}
+	.three-columns {
+		width: 18.75%
+	}
+	.four-columns {
+		width: 25%
+	}
+	.five-columns {
+		width: 31.25%
+	}
+	.six-columns {
+		width: 37.5%
+	}
+	.seven-columns {
+		width: 43.75%
+	}
+	.eight-columns {
+		width: 50%
+	}
+	.nine-columns {
+		width: 56.25%
+	}
+	.ten-columns {
+		width: 62.5%
+	}
+	.eleven-columns {
+		width: 68.75%
+	}
+	.twelve-columns {
+		width: 75%
+	}
+	.thirteen-columns {
+		width: 81.25%
+	}
+	.fourteen-columns {
+		width: 87.5%
+	}
+	.fifteen-columns {
+		width: 93.75%
+	}
+	.sixteen-columns {
+		width: 100%
+	}
+}
