@@ -17,7 +17,10 @@ a {
 	text-decoration: none;
 	color: #0090e2;
 }
-
+ul, li {
+	padding: 0;
+	list-style: none;
+}
 .hidden {
 	display: none;
 }
@@ -53,14 +56,116 @@ a {
 h2 {
 	margin-top: 0
 }
-.velo h2 {
+.transport {
+	margin-top: -15px;
+}
+.transport h2 {
 	font-size: 1.15em;
 	font-weight: 400;
 	text-align: center;
 }
-.velo select {
+.transport h3 {
+	font-weight: 400;
+}
+.transport select {
 	width: 100%;
 	padding: 10px;
 	font-family: 'Open Sans';
 	font-size: 1.1em;
+}
+.transport ul li{
+	background: #FEFEFE;
+	color: #222;
+	margin: 0 -20px;
+	padding: 10px 20px;
+	border-bottom: 1px solid #222;
+	position: relative;
+}
+.transport ul li a{
+	float: right;
+}
+.station {
+	font-size: 1.1em;
+	padding-top: 30px;
+}
+.station address {
+	text-align: center;
+	position: relative;
+}
+.icon-my-location {
+	font-size: 1.8em;
+	padding-right: 15px;
+	position: absolute;
+	top: -5px;
+	left: 0;
+}
+.status {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 40px;
+	text-transform: capitalize;
+	color: #606060;
+}
+.icon-check {
+	color: #88B500;
+	font-size: 2.6em;
+	margin-bottom: 0px;
+	vertical-align: middle;
+}
+.slot-bike {
+	text-align: center;
+	text-shadow: #000 0 -1px 0;
+}
+.bike, .slot {
+	width : 50%;
+	float: left;
+}
+.bike {
+	border-right: 1px solid #606060;
+}
+.bike span, .slot span {
+	display: block;
+}
+.bike div, .slot div {
+	font-size: 0.7em;
+	color: #DFDFDF;
+}
+.bike > span {
+	color: #0090e2;
+	font-size: 2.7em;
+	margin-top: -5px;
+	margin-bottom: 30px;
+}
+.bike span+span, .slot span+span {
+	font-size: 3.3em;
+	color: #fff;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.rounded {
+	background: #0090e2;
+	border-radius: 50%;
+	padding: 5px;
+	width: 40px;
+	margin: 0 auto;
+	margin-bottom: 32px;
+	font-weight: 600;
+	font-size: 1.3em
+}
+.icon-check {
+	color: #88b500;
+}
+.icon-close {
+	color: #900;
+}
+.transport li .green {
+	background: #88B500;
+	color: #fff;
+	text-shadow: #000 0 -1px 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 10px 20px;
+	
 }

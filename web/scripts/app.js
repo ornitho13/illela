@@ -1,6 +1,6 @@
 var illelaApp = angular.module('illelaApp', [
 	'ngRoute',
-	'veloController'
+	'transportController'
 ]);
 
 illelaApp.config(['$routeProvider',
@@ -8,6 +8,14 @@ illelaApp.config(['$routeProvider',
 		$routeProvider.when('/velo', {
 			templateUrl: 'views/velo.html',
 			controller: 'veloListDetail'
+			
+		}).when('/metro', {
+			templateUrl: 'views/metro.html',
+			controller: 'metroListDetail'
+			
+		}).when('/metro/nextdepartures/:id', {
+			templateUrl: 'views/metroNextdepartures.html',
+			controller: 'metroNextDepartures'
 			
 		});
 	}
