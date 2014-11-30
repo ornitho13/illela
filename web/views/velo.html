@@ -1,16 +1,20 @@
-    <div class="velo">
+    <div class="transport">
 	    <h2>Choisissez une station :</h2>
 		<select id="bike-station">
 			<option ng-repeat="station in stations" value="{{station.number}}" ng-disabled="{{!station.state}}">{{station.name}}</option>
 		</select>
 		<div class="{{displayState}}">
-			<address><span class="icon-my-location"></span>{{result.address}}</address>
-			<div class="status">statut : <span class="icon-{{result.status}}"></span></div>
-			<div class="slot-bike">
-				<div class="left bike">{{result.bikesavailable}}</div>
-				<div class="right slot">{{result.slotsavailable}}</div>
+			<div class="station">
+				<address><span class="icon-my-location"></span>{{result.address}}</address>
+				<div class="status">statut : <span class="icon-{{result.status}}"></span></div>
+				<div class="slot-bike row">
+					<div class="eight-columns bike"><span class="icon-directions-bike"></span><span>{{result.bikesavailable}}</span><div>V&eacute;los disponibles</div></div>
+					<div class="eight-columns slot"><span class="rounded">P</span><span>{{result.slotsavailable}}</span><div>Emplacements disponibles</div></div>
+				</div>
 			</div>
-			<h3>Bus et m&eacute;tro &agrave; cette station</h3>
-			
+			<h3>M&eacute;tro &agrave; proximit&eacute; de cette station</h3>
+			<ul>
+				<li ng-repeat="metro in metros">{{metro.name}}<a href="#/metro/nextdepartures/{{metro.id}}">voir les prochains d&eacute;parts <span class="icon-chevron-right"></span></a></li>
+			</ul>
 		</div>
 	</div>
