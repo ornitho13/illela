@@ -4,6 +4,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 use Illela\Controller\Velo;
 use Symfony\Component\HttpFoundation\Request;
 use Illela\Controller\Metro;
+use Illela\Controller\Bus;
 
 define('__KEOLIS_API_URL__', 'http://data.keolis-rennes.com/');
 define('__KEOLIS_API_KEY__', '5V2C9RF6SF9GW49');
@@ -51,5 +52,15 @@ $app->get('/metro/{id}', function($id='', Request $request) {
     $param = $_GET;
     $metroController = new Metro();
     return $metroController->stationById($request, $id);
+});
+$app->get('/bus', function( Request $request) {
+    $param = $_GET;
+    $busController = new Bus();
+    return $busController->index($request);
+});
+$app->get('/bus/alert/{id}', function($id='', Request $request) {
+    $param = $_GET;
+    $busController = new Bus();
+    return $busController->alert($id, $request);
 });
 $app['http_cache']->run();
