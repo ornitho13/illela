@@ -43,17 +43,6 @@ transportController.controller('metroListDetail', ['$scope', '$http',
 		$http.get('http://127.0.0.1/illela/web/metro').success(function(response){
 			$scope.stations = response.opendata.answer.data.station;
 		});
-		$(document.getElementById('bike-station')).on('change', function(){
-			$http.get('http://127.0.0.1/illela/web/metro/' + this.value).success(function(response){
-				$scope.result = response.opendata.answer.data.station;
-				$scope.result.status = parseInt($scope.result.state, 10) === 1 ? 'check' : 'close';
-				$scope.displayState = '';
-				// add metro station if available
-				$http.get('http://127.0.0.1/illela/web/metro/proximity?lat=' + $scope.result.latitude + '&long=' + $scope.result.longitude).success(function(data) {
-					$scope.metros = data.opendata.answer.data.station;
-				});
-			});
-				
-		});
+		
 	}
 ]);
